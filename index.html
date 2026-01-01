@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pablo Baiges Castillo - Mechanical Engineering Student at ESEIAAT-UPC specializing in CFD Simulation and Industrial DCS">
+    <title>Pablo Baiges Castillo | Mechanical Engineering Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e5e7eb;
+            --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        /* Header / Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--border);
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero .location {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+        }
+
+        .social-links a:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* About */
+        .about p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Experience & Education Cards */
+        .card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .card-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .card-date {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+        }
+
+        .card-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .project-tech span {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
+        }
+
+        .cert-info h3 {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .cert-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent);
+            background: var(--bg-primary);
+        }
+
+        .contact-link svg {
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .card-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .card-date {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #0a0a0a;
+                --bg-secondary: #171717;
+                --text-primary: #fafafa;
+                --text-secondary: #a1a1aa;
+                --border: #27272a;
+                --accent: #3b82f6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <!-- Replace with your photo: upload to repo and use filename -->
+            <img src="https://ui-avatars.com/api/?name=Pablo+Baiges&size=200&background=2563eb&color=fff&bold=true" alt="Pablo Baiges Castillo" class="avatar">
+            <h1>Pablo Baiges Castillo</h1>
+            <p class="tagline">Mechanical Engineering Student | CFD Simulation | Industrial DCS</p>
+            <p class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Barcelona, Spain
+            </p>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://github.com/pablobaiges7" target="_blank" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/pablo-baigescastillo-b3491a379" target="_blank" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:pablobaiges7@gmail.com" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About</h2>
+            <p>
+                I've always been fascinated by the invisible forces that shape our world—how air flows around a racing car, how industrial systems communicate, how simulation can predict reality before we build it.
+            </p>
+            <p>
+                That curiosity led me to pursue Mechanical Engineering at ESEIAAT-UPC after completing the International Baccalaureate (HL Physics, Spanish, English) at Agora Sant Cugat, where my Extended Essay explored physics concepts that still drive my work today.
+            </p>
+            <p>
+                Currently collaborating with <strong>498 Advanced Solutions</strong> on systems simulation projects, developing an <strong>MCP for Industrial DCS</strong>, and preparing to join <strong>UPC ecoRacing</strong> Formula Student team in 2026.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Ansys Fluent</span>
+                <span class="skill-tag">CFD Simulation</span>
+                <span class="skill-tag">Systems Simulation</span>
+                <span class="skill-tag">Industrial DCS</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">AutoCAD</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Protocol Development</span>
+                <span class="skill-tag">Industrial Automation</span>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section>
+            <h2>Experience</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Systems Simulation Project Collaborator <span class="card-badge">Current</span></div>
+                        <div class="card-subtitle">498 Advanced Solutions</div>
+                    </div>
+                    <div class="card-date">Dec 2025 - Present</div>
+                </div>
+                <p class="card-description">
+                    Contributing to a high-performance computing project focused on computer architecture optimization for simulation workloads. Working with senior engineers on computational design decisions and applying professional consultancy methodologies.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">MCP for Industrial DCS Developer <span class="card-badge">Academic</span></div>
+                        <div class="card-subtitle">ESEIAAT-UPC</div>
+                    </div>
+                    <div class="card-date">2025 - Present</div>
+                </div>
+                <p class="card-description">
+                    Developing a Model Context Protocol for Industrial Distributed Control Systems. Research and analysis of DCS architectures, protocol design for distributed control integration, and framework implementation for industrial automation.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Formula Student Team Candidate</div>
+                        <div class="card-subtitle">UPC ecoRacing</div>
+                    </div>
+                    <div class="card-date">2026</div>
+                </div>
+                <p class="card-description">
+                    Applying to join UPC ecoRacing Formula Student team. Interested in contributing simulation and systems knowledge to aerodynamics, systems integration, and data analysis.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>MCP for Industrial DCS</h3>
+                <p>Developing a Model Context Protocol for Industrial Distributed Control Systems, bridging modern communication protocols with legacy industrial automation systems.</p>
+                <div class="project-tech">
+                    <span>DCS</span>
+                    <span>Industrial Automation</span>
+                    <span>Protocol Development</span>
+                    <span>MATLAB</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Systems Simulation Architecture</h3>
+                <p>Consulting project analyzing and optimizing computer architectures for simulation workloads, focusing on high-performance computing and performance benchmarking.</p>
+                <div class="project-tech">
+                    <span>Systems Simulation</span>
+                    <span>HPC</span>
+                    <span>Computer Architecture</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>CFD Learning Projects</h3>
+                <p>Applying CFD simulation skills from Ansys Fluent certification to fluid flow analysis, mesh generation, and results post-processing.</p>
+                <div class="project-tech">
+                    <span>Ansys Fluent</span>
+                    <span>CFD</span>
+                    <span>Fluid Dynamics</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section>
+            <h2>Education</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Bachelor's Degree in Mechanical Engineering</div>
+                        <div class="card-subtitle">ESEIAAT-UPC, Barcelona</div>
+                    </div>
+                    <div class="card-date">2025 - 2029</div>
+                </div>
+                <p class="card-description">
+                    Focus: Computational simulation (CFD, FEA), Computer-aided design, Fluid mechanics, Industrial systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">International Baccalaureate Diploma</div>
+                        <div class="card-subtitle">Agora Sant Cugat International School</div>
+                    </div>
+                    <div class="card-date">2023 - 2025</div>
+                </div>
+                <p class="card-description">
+                    Higher Level: Physics, Spanish, English. Extended Essay in Physics.
+                </p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section>
+            <h2>Certifications</h2>
+            
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>Introduction to Ansys Fluent</h3>
+                    <p>Ansys - 2025</p>
+                </div>
+            </div>
+            
+            <div class="cert-item">
+                <div class="cert-info">
+                    <h3>AI for Everyone</h3>
+                    <p>DeepLearning.AI - 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:pablobaiges7@gmail.com" class="contact-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    pablobaiges7@gmail.com
+                </a>
+                <a href="https://github.com/pablobaiges7" target="_blank" class="contact-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    github.com/pablobaiges7
+                </a>
+                <a href="https://www.linkedin.com/in/pablo-baigescastillo-b3491a379" target="_blank" class="contact-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn Profile
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Pablo Baiges Castillo. Built with HTML & CSS.</p>
+        </footer>
+    </div>
+</body>
+</html>
